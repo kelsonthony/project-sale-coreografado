@@ -1,0 +1,10 @@
+server:
+  port: 8091
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/saga_sale
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
