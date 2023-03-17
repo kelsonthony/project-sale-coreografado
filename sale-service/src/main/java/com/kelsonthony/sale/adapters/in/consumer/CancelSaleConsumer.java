@@ -17,7 +17,7 @@ public class CancelSaleConsumer {
 
     @KafkaListener(topics = "tp-saga-sale", groupId = "sale-cancel")
     public void receive(SaleMessage saleMessage) {
-        if (SaleEvent.ROLLBACK_INVENTORY.equals(saleMessage.getEvent())) {
+        if (SaleEvent.ROLLBACK_INVENTORY.equals(saleMessage.getSaleEvent())) {
             log.info("Cancelado a venda...");
             cancelSaleInputPort.cancel(saleMessage.getSale());
             log.info("Venda cancelada com sucesso.");
